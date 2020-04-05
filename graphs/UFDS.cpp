@@ -45,7 +45,7 @@ int main(){
 	cout<<"size of set where is 4 is: "<<a.Size(4)<<endl;
 	cout<<"size of set where is 6 is: "<<a.Size(6)<<endl;
 	cout<<"size of set where is 9 is: "<<a.Size(9)<<endl;
-	cout<<"num of sets"<<a.NumSet()<<endl;
+	cout<<"num of sets "<<a.NumSet()<<endl;
 	return 0;
 }
 
