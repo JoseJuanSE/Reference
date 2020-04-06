@@ -5,6 +5,7 @@
 #define se second
 #define fast ios_base::sync_with_stdio(0);cin.tie(0);
 #define ALL(v) v.begin(), v.end()
+#define ALLR(v) v.rbegin(), v.rend()
 #define deb cout<<"HOLA\n";
 #define UNIQUE(v) (v).resize(unique(ALL(v))-(v).begin())
 #define forn(i,n) for (int i = 0; i < n; i++)
