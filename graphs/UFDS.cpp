@@ -5,8 +5,8 @@ struct UFDS{
 	vector<int>p,r,s;
 	int ns;
 	UFDS(int n){
+		ns=n;
 		n++;
-		ns=n-1;
 		p.assign(n,0);
 		r.assign(n,0);
 		s.assign(n,1);
