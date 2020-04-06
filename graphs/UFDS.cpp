@@ -2,13 +2,12 @@
 using namespace std;
 //Union Find Disjoint Set
 struct UFDS{
-	vector<int>p,r,s;
+	vector<int>p,s;
 	int ns;
 	UFDS(int n){
 		ns=n;
 		n++;
 		p.assign(n,0);
-		r.assign(n,0);
 		s.assign(n,1);
 		for(int i=0;i<n;i++)p[i]=i;
 	}
@@ -20,14 +19,13 @@ struct UFDS{
 		int x=FindSet(i),y=FindSet(j);
 		if(!IsSameSet(x,y)){
 			ns--;
-			if(r[x]>r[y]){
+			if(s[x]>s[y]){
 				p[y]=x;
 				s[x]+=s[y];
 			}
 			else{
 				p[x]=y;
 				s[y]+=s[x];
-				if(r[x]==r[y])r[y]++;
 			}
 		}
 	}
