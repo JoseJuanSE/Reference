@@ -10,7 +10,9 @@
 #define UNIQUE(v) (v).resize(unique(ALL(v))-(v).begin())
 #define forn(i,n) for (int i = 0; i < n; i++)
 #define forr(i,a,b) for (int i = a; i <= b; i++)
-#define bs(v,f) binary_search(v.begin(),v.end(),f)
+#define bs(v,f) binary_search(ALL(v),f)
+#define lb(v,f) lower_bound(ALL(v),f)
+#define ub(v,f) upper_bound(ALL(v),f)
 #define pb push_back
 
 using namespace std;
