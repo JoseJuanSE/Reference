@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef unsigned long long ull;
+//binary exponentiation
 ull b_e(ull n,ull k){
 	ull x=1;
 	while(k){
