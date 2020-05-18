@@ -11,7 +11,7 @@ struct UFDS{
 		s.assign(n,1);
 		for(int i=0;i<n;i++)p[i]=i;
 	}
-	int FindSet(int i){return p[i]==i?i:FindSet(p[i]);}
+	int FindSet(int i){return p[i]==i?i:p[i]=FindSet(p[i]);}
 	bool IsSameSet(int i,int j){return FindSet(i)==FindSet(j);}
 	int Size(int i){return s[FindSet(i)];}
 	int NumSet(){return ns;}
