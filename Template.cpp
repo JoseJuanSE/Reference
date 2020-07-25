@@ -14,7 +14,7 @@
 #define lb(v,f) lower_bound(ALL(v),f)
 #define ub(v,f) upper_bound(ALL(v),f)
 #define pb push_back
-
+#define OJ freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
 using namespace std;
 
 typedef long long ll;
@@ -29,13 +29,13 @@ typedef vector<ll> vl;
 typedef vector<ii> vii;
 
 void solve(){
-	
+    
 }
 int main(){
-	int t;
-	cin>>t;
-	while(t--)
-		solve();
-	return 0;
+    OJ;
+    int t;
+    cin>>t;
+    while(t--)
+        solve();
+    return 0;
 }
-
