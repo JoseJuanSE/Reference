@@ -32,7 +32,7 @@ void solve(){
     
 }
 int main(){
-    OJ;
+    //OJ;
     int t;
     cin>>t;
     while(t--)
