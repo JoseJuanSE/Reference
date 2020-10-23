@@ -10,11 +10,12 @@
 #define UNIQUE(v) (v).resize(unique(ALL(v))-(v).begin())
 #define forn(i,n) for (int i = 0; i < n; i++)
 #define forr(i,a,b) for (int i = a; i <= b; i++)
-#define bs(v,f) binary_search(ALL(v),f)
+#define bsc(v,f) binary_search(ALL(v),f)
 #define lb(v,f) lower_bound(ALL(v),f)
 #define ub(v,f) upper_bound(ALL(v),f)
-#define pb push_back
+#define pub push_back
 #define OJ freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
+
 using namespace std;
 
 typedef long long ll;
@@ -33,7 +34,7 @@ void solve(){
 }
 int main(){
     //OJ;
-    int t;
+    int t=1;
     cin>>t;
     while(t--)
         solve();
