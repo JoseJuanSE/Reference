@@ -15,7 +15,7 @@ struct UFDS{
 	bool IsSameSet(int i,int j){return FindSet(i)==FindSet(j);}
 	int Size(int i){return s[FindSet(i)];}
 	int NumSet(){return ns;}
-	void UnionSet(int i,int j){
+	bool UnionSet(int i,int j){
 		int x=FindSet(i),y=FindSet(j);
 		if(!IsSameSet(x,y)){
 			ns--;
@@ -27,7 +27,9 @@ struct UFDS{
 				p[x]=y;
 				s[y]+=s[x];
 			}
+			return true;
 		}
+		return false;
 	}
 };
 int main(){
