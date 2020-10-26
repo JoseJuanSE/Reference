@@ -17,19 +17,14 @@ struct UFDS{
 	int NumSet(){return ns;}
 	bool UnionSet(int i,int j){
 		int x=FindSet(i),y=FindSet(j);
-		if(!IsSameSet(x,y)){
-			ns--;
-			if(s[x]>s[y]){
-				p[y]=x;
-				s[x]+=s[y];
-			}
-			else{
-				p[x]=y;
-				s[y]+=s[x];
-			}
-			return true;
-		}
-		return false;
+		if(x==y)
+		 	return false;
+		if(s[x]<s[y])
+			swap(x,y);
+		if(s[x]==s[y])
+			s[x]++;
+		p[y]=x;
+		return true;
 	}
 };
 int main(){
