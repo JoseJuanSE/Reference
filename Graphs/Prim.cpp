@@ -1,16 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
-//not working 
+
 int Prim(int ori,vector<vector<pair<int,int> > >&graph){
     priority_queue<pair<int,int> >pq;
     pq.push(make_pair(0,ori));
     vector<bool> vis(graph.size()+1,false);
-    int mini=0;
-    while(!pq.empty()){
+    int mini=0,v=0;
+    while(!pq.empty() and v<graph.size()){
         pair<int,int> curr = pq.top();
         pq.pop();
         if(vis[curr.second])continue;
         vis[curr.second]=1;
+        v++;
         mini-=curr.first;
         for(pair<int,int> i:graph[curr.second]){
             pq.push(i);
@@ -30,6 +31,7 @@ void read(){
         int a,b,w;
         cin>>a>>b>>w;
         graph[a].push_back(make_pair(-1*w,b));
+        graph[b].push_back(make_pair(-1*w,a));
     }
     int ori=1;
     for(int i=0;i<=n;i++){
