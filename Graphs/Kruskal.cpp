@@ -43,7 +43,7 @@ int kruskal(int &n,vector<edge> &arr){
             mini+=e.w;
             uf.UnionSet(e.y,e.x);
         }
-        if(uf.NumSet()==2)break;
+        if(uf.NumSet()==1)break;
     }
     return mini;
 }
