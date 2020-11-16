@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
-
 using namespace std;
-//no detecta ciclos negativos de forma correcta
+
 struct edge{
     int x,y,w;
     edge(int a,int b,int g):x(a),y(b),w(g){};
@@ -20,7 +19,7 @@ vector<int> BF(int so,int v,vector<edge> &graph){
     for(int i=0;i<v-1;i++){
         for(edge j:graph){
             if(d[j.x] < INT_MAX and d[j.x]+j.w<d[j.y])
-                d[j.y] = INT_MIN;
+                d[j.y] = -(1e9);
         }
     }
     return d;
