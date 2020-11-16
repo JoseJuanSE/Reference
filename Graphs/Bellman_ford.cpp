@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#define INF 1e9
 using namespace std;
 
 struct edge{
@@ -7,19 +8,25 @@ struct edge{
 };
 
 vector<int> BF(int so,int v,vector<edge> &graph){
-    vector<int> d(v,INT_MAX);
+    vector<int> d(v,INF);
     d[so]=0;
     for(int i=0;i<v-1;i++){
+        bool any = true;
         for(edge j:graph){
-            if(d[j.x] < INT_MAX)
-                d[j.y] = min(d[j.y],d[j.x]+j.w);
+            if(d[j.x] < INF){
+                if(d[j.y] > d[j.x]+j.w){
+                    d[j.y] = d[j.x]+j.w;
+                    any = false;
+                }
+            }
         }
+        if(any)break;
     }
     //mark negative cycle
     for(int i=0;i<v-1;i++){
         for(edge j:graph){
-            if(d[j.x] < INT_MAX and d[j.x]+j.w<d[j.y])
-                d[j.y] = -(1e9);
+            if(d[j.x] < INF and d[j.x]+j.w<d[j.y])
+                d[j.y] = -1 * INF;
         }
     }
     return d;
@@ -47,13 +54,13 @@ int main(){
 /*
 6
 7
-1 2 3
-1 3 2
-2 4 3
-3 4 2
-3 5 1 
-4 6 4
-5 6 5
+0 1 3
+0 2 2
+1 3 3
+2 3 2
+2 4 1 
+3 5 4
+4 5 5
 
 output:
 0 3 2 4 3 8
