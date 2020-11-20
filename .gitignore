@@ -8,3 +8,4 @@
 !*/
 # ignore all .exe
 *.exe
+*.json
