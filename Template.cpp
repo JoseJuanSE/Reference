@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 
+//--------------definitions-------------
 #define endl '\n'
 #define fi first
 #define se second
@@ -14,6 +15,7 @@
 #define lb(v,f) lower_bound(ALL(v),f)
 #define ub(v,f) upper_bound(ALL(v),f)
 #define pub push_back
+//--------------definitions-------------
 
 using namespace std;
 
@@ -66,7 +68,7 @@ template<class H, class... T> void EDBG(string names, H h, T... t) {
 #define edbg(...) 0
 #endif
 //--------------DEBUG--------------
-
+//--------------DTypes-------------
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
@@ -77,7 +79,7 @@ typedef vector<int> vi;
 typedef vector<vector<int> > vvi;
 typedef vector<ll> vl;
 typedef vector<ii> vii;
-
+//--------------DTypes-------------
 void solve(){
     ll n,m,x;
     cin>>n>>m;
