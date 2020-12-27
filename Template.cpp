@@ -14,6 +14,7 @@
 #define bse(v,f) binary_search(ALL(v),f)
 #define lb(v,f) lower_bound(ALL(v),f)
 #define ub(v,f) upper_bound(ALL(v),f)
+#define SZ(x) (int)x.size()
 #define pub push_back
 //--------------definitions-------------
 
