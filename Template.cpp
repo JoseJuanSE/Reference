@@ -16,6 +16,7 @@
 #define ub(v,f) upper_bound(ALL(v),f)
 #define SZ(x) (int)x.size()
 #define pub push_back
+#define MOD int(1e9+7)
 //--------------definitions-------------
 
 using namespace std;
