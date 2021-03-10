@@ -1,25 +1,30 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-int ft[100000], n;
-
-void update(int r, int c){
-    if (r > n)return;
-    ft[r] += c;
-    update(r + (r & (-r)), c);
-}
-
-int q(int c){
-    if (!c)return 0;
-    return ft[c] + q(c - (c & (-c)));
-}
-
+struct BIT{
+    vector<long long> a;
+    BIT(int x){
+        a.assign(x,0);
+    }
+    BIT(){
+        a.assign(100005,0);
+    }
+    void update(int n,long long c){
+        if(n>a.size())return ;
+        a[n]+=c;
+        update(n+(n&(-n)),c);
+    }
+    long long q(int c){
+        if(!c)return 0;
+        return a[c]+q(c-(c&(-c)));
+    }
+};
 int main(){
-    n=10;
-    for (int i = 1; i <= n; i++)
-        update(i, i);
-    
-    cout << q(4) << endl; // -> 10
-    cout << q(5) - q(4) << endl; // -> 5
-    cout << q(3); // -> 6
+    int n = 10;
+    BIT a(n);
+    for(int i=1;i<n;i++)
+        a.update(i,i);
+    cout<<a.q(5)<<endl;
+    cout<<a.q(6)-a.q(5)<<endl;
+    cout<<a.q(7)<<endl;
+    return 0;
 }
