@@ -27,7 +27,7 @@ struct SP{
                 t[j][i] = f(t[j-1][i],t[j-1][i+(1<<(j-1))]);
     }
     // no updates
-    int querie(int i,int j){
+    int query(int i,int j){
         int s = j-i+1;
         int ans = 0; // neutral for the operation
         while(s){
@@ -52,5 +52,5 @@ int main(){
         }
         cout<<endl;
     }
-    cout<<g.querie(0,7)<<endl; // ans = 50
+    cout<<g.query(0,7)<<endl; // ans = 50
 }
