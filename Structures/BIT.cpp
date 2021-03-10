@@ -2,12 +2,8 @@
 using namespace std;
 struct BIT{
     vector<long long> a;
-    BIT(int x){
-        a.assign(x,0);
-    }
-    BIT(){
-        a.assign(100005,0);
-    }
+    BIT(int x):a(x,0){}
+    BIT():a(1000005,0){}
     void update(int n,long long c){
         if(n>a.size())return ;
         a[n]+=c;
