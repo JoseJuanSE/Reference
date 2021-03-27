@@ -11,13 +11,13 @@ int cons(int i,int j,int po){
     st[po].iz=i;
     if(st[po].de==st[po].iz){
         if(i>n)st[po].val=0;
-        else    st[po].val=arre[i];    
+        else st[po].val=arre[i];    
         return st[po].val;    
     }
     return st[po].val=cons(i,(i+j)/2,po*2)+cons((i+j)/2+1,j,po*2+1);
 }
 int search(int i, int ac){
-    if(st[ac].iz==st[ac].de and st[ac].iz==i)    return ac;
+    if(st[ac].iz==st[ac].de and st[ac].iz==i)return ac;
     if(st[ac].iz<=i and st[ac].de>=i){
         search(i,ac*2);
         search(i,ac*2+1);
@@ -30,7 +30,7 @@ void actu(int p,int k){
     }
 }
 void update(int i,int k){
-    int po=    search(i,1);
+    int po=search(i,1);
     actu(po,k);
 }
 int query(int i,int j,int po){
