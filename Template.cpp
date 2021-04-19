@@ -17,6 +17,7 @@
 #define SZ(x) (int)x.size()
 #define pub push_back
 #define MOD int(1e9+7)
+#define OJ freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
 //--------------definitions-------------
 
 using namespace std;
