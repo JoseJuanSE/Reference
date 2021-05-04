@@ -21,6 +21,10 @@ int roun(double x){ return x+0.5;}
 
 int divRound(int a,int b){ return (2*a+b)/(2*b);}
 
+//floot of a/b just a/b
+
+//ceil of a division a/b is (a-1)/b+1
+
 //--------------divisors and prime numbers-----------------
 // 1 is not prime and neither composite
 
@@ -40,7 +44,7 @@ vector<int> getDivisors(int n){//O(sqrt(n)) -> n<= 10^14
 
 bool isPrime(int x){// use long long int if n>=10^9, O(sqrt(n))
     if(x==2)return true;
-    if(x%2==0)return false;
+    if(x%2 == 0 or x == 1)return false;
     for(int i=3;i*i<=x;i+=2){
         if(x%i==0)
             return false;
@@ -76,7 +80,8 @@ vector<bool> sieveOp(int n){
     }
     for(int i=3;i*i<=n;i+=2){
         if(is_prime[i]){
-            //primes.push_back(i) if we wanna finish with an array of primes factors
+            //primes.push_back(i) 
+            //if we wanna finish with an array of primes factors
             if((long long)i*i <= n)
                 for(int j=i*i;j<=n;j+=2*i){
                     is_prime[j]=false;
