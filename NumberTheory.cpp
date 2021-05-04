@@ -78,7 +78,7 @@ vector<bool> sieveOp(int n){
     for(int i=4;i<=n;i+=2){
         is_prime[i]=false;
     }
-    for(int i=3;i*i<=n;i+=2){
+    for(int i=3;i<=n;i+=2){
         if(is_prime[i]){
             //primes.push_back(i) 
             //if we wanna finish with an array of primes factors

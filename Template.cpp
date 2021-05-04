@@ -16,7 +16,7 @@
 #define ub(v,f) upper_bound(ALL(v),f)
 #define SZ(x) (int)x.size()
 #define pub push_back
-#define MOD int(1e9+7)
+#define OJ freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
 //--------------definitions-------------
 
 using namespace std;
@@ -82,6 +82,9 @@ typedef vector<vector<int> > vvi;
 typedef vector<ll> vl;
 typedef vector<ii> vii;
 //--------------DTypes-------------
+const int MOD = 1e9+7;
+
+
 void solve(){
     ll n,m,x;
     cin>>n>>m;
