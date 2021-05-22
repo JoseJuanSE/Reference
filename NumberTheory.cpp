@@ -95,7 +95,7 @@ vector<bool> sieveOp(int n){
 // this sieve tell us in O(1) how many divisors we have in div[i]
 vector<int> sieveDiv(int n){//O(nlog(n))
     vector<int> div(n+1,0);
-    for(int i=1;i*i<=n;i++){
+    for(int i=1;i<=n;i++){
         for(int j=i;j<=n;j+=i){
             div[j]++;//to get the divisor insead of how many, we just need to do div[i].push_back(i)
         }
@@ -120,7 +120,10 @@ map<int,int> primeFactorization(int n){//O(sqrt(n)) n<=1e14
         fact[n]=1;
     }
     return fact;
-}
+} // this can be better if insted of i we use p where p are primes, we get those primes from sieve
+
+// if we want to do this even better, in log(n), we can, using lowest prime divisor sieve, do the precalculus cost nloglog(n), and get the prime factorization of a number, log(n)
+
 
 
 int main(){
