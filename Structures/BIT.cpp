@@ -4,14 +4,14 @@ struct BIT{
     vector<long long> a;
     BIT(int x):a(x,0){}
     BIT():a(1000005,0){}
-    void update(int n,long long c){
-        if(n>a.size())return ;
+    void update(int n, long long c){
+        if(n>=a.size())return ;
         a[n]+=c;
-        update(n+(n&(-n)),c);
+        update(n+(n&(-n)), c);
     }
     long long q(int c){
         if(!c)return 0;
-        return a[c]+q(c-(c&(-c)));
+        return a[c] + q(c-(c&(-c)));
     }
 };
 int main(){
